@@ -1,9 +1,7 @@
 import React from "react";
 import "../styles/FilterBar.css";
 
-const ALL_TAGS = ["Array", "DP", "HashMap", "Greedy", "Sorting", "Two Pointers"];
-
-const FilterBar = ({ selectedTags, setSelectedTags }) => {
+const FilterBar = ({ tags, selectedTags, setSelectedTags }) => {
   const toggleTag = (tag) => {
     if (selectedTags.includes(tag)) {
       setSelectedTags(selectedTags.filter((t) => t !== tag));
@@ -14,7 +12,7 @@ const FilterBar = ({ selectedTags, setSelectedTags }) => {
 
   return (
     <div className="filterbar-container">
-      {ALL_TAGS.map((tag) => (
+      {tags.map((tag) => (
         <button
           key={tag}
           onClick={() => toggleTag(tag)}
