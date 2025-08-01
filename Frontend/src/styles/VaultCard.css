@@ -1,0 +1,51 @@
+.vaultcard-row td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+}
+
+.vaultcard-title {
+  cursor: pointer;
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.vaultcard-title:hover {
+  text-decoration: underline;
+}
+
+.vaultcard-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.vaultcard-tag {
+  background-color: #f3f4f6;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.vaultcard-difficulty {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+}
+
+.vaultcard-difficulty.easy {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.vaultcard-difficulty.medium {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.vaultcard-difficulty.hard {
+  background-color: #fee2e2;
+  color: #991b1b;
+}

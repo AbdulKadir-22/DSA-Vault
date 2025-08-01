@@ -1,0 +1,9 @@
+.home-container{
+    display: flex;
+}
+
+
+.home-main{
+  width: 100%;
+  flex: 1;
+}

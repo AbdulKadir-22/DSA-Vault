@@ -1,0 +1,28 @@
+.vaulttable-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.vaulttable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.vaulttable th {
+  text-align: left;
+  padding: 12px 15px;
+  background-color: #f3f4f6;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.vaulttable-empty {
+  text-align: center;
+  padding: 20px;
+  color: #6b7280;
+  font-style: italic;
+}
