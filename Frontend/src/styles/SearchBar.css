@@ -1,19 +1,43 @@
+/* src/styles/SearchBar.css */
+
 .searchbar-container {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   width: 100%;
+  position: relative; /* Needed to position the icon */
 }
 
 .searchbar-input {
-  width: 100%;
-  padding: 10px 15px;
+  width: 95%;
+  padding: 12px 20px 12px 40px; /* Increased padding, especially on the left for the icon */
   font-size: 1rem;
-  border: 2px solid #d1d5db;
+  border: 1px solid #d1d5db; /* Changed to 1px for a cleaner look */
   border-radius: 8px;
   outline: none;
-  transition: 0.2s ease;
+  background-color: #f9fafb; /* Slightly off-white background */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%236b7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>');
+  background-repeat: no-repeat;
+  background-position: 12px center; /* Position the icon */
+  transition: all 0.2s ease-in-out;
+}
+
+.searchbar-input::placeholder {
+  color: #9ca3af; /* Lighter placeholder text */
 }
 
 .searchbar-input:focus {
   border-color: #10b981;
+  background-color: #ffffff;
   box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+/* --- Media Query for Mobile --- */
+@media (max-width: 768px) {
+  .searchbar-input {
+    padding: 10px 15px 10px 35px; /* Adjust padding for smaller screens */
+    font-size: 0.95rem;
+  }
+
+  .searchbar-container {
+    margin-bottom: 20px;
+  }
 }

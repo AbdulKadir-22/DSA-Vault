@@ -6,7 +6,7 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => {
     <div className="searchbar-container">
       <input
         type="text"
-        placeholder="🔍 Search by title..."
+        placeholder=" Search by title..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         className="searchbar-input"

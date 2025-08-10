@@ -2,7 +2,8 @@
 import React from "react";
 import "../styles/InputField.css";
 
-const InputField = ({ label, name, value, onChange, type = "text", placeholder }) => {
+// Added 'required' as a prop, defaulting to false.
+const InputField = ({ label, name, value, onChange, type = "text", placeholder, required = false }) => {
   return (
     <div className="input-field">
       <label htmlFor={name}>{label}</label>
@@ -13,7 +14,7 @@ const InputField = ({ label, name, value, onChange, type = "text", placeholder }
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        required
+        required={required} // 'required' is now controlled by the prop
       />
     </div>
   );

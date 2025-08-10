@@ -1,28 +1,59 @@
+/* src/styles/VaultTable.css */
+
 .vaulttable-wrapper {
   width: 100%;
-  overflow-x: auto;
+  overflow-x: auto; /* This is key for responsiveness on tables */
   background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 12px; /* Slightly larger radius */
+  border: 1px solid #e5e7eb; /* Consistent border */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .vaulttable {
   width: 100%;
   border-collapse: collapse;
-  min-width: 700px;
+  /* A min-width ensures the table doesn't get too cramped before scrolling starts */
+  min-width: 650px; 
 }
 
 .vaulttable th {
   text-align: left;
-  padding: 12px 15px;
-  background-color: #f3f4f6;
-  font-size: 0.9rem;
-  color: #374151;
+  padding: 14px 15px;
+  background-color: #f9fafb; /* Lighter background for the header */
+  font-size: 0.85rem; /* Slightly smaller for a cleaner look */
+  color: #6b7280; /* Softer text color */
+  font-weight: 600;
+  text-transform: uppercase; /* Standard for table headers */
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-.vaulttable-empty {
+/* Style for the very first and last header cells for rounded corners */
+.vaulttable th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.vaulttable th:last-child {
+  border-top-right-radius: 12px;
+}
+
+.vaulttable-empty,
+.vaulttable-loading {
   text-align: center;
-  padding: 20px;
+  padding: 40px 20px;
   color: #6b7280;
   font-style: italic;
+  font-size: 1rem;
+}
+
+/* --- Media Query for Mobile --- */
+@media (max-width: 768px) {
+  .vaulttable {
+    min-width: 600px; /* Adjust min-width for smaller screens if needed */
+  }
+
+  .vaulttable th {
+    padding: 12px 10px;
+    font-size: 0.8rem;
+  }
 }

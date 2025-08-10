@@ -1,27 +1,49 @@
+/* src/styles/FilterBar.css */
+
 .filterbar-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 12px; /* Slightly increased gap for better spacing */
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5e7eb; /* Adds a subtle separator line */
 }
 
 .filter-tag {
-  padding: 6px 12px;
+  padding: 8px 16px; /* Increased padding for a better click area */
   border-radius: 20px;
   border: 1px solid #d1d5db;
   background-color: white;
   color: #374151;
   cursor: pointer;
   font-size: 0.9rem;
-  transition: 0.2s ease;
+  font-weight: 500; /* Slightly bolder text */
+  transition: all 0.2s ease-in-out; /* Smooth transition for all properties */
 }
 
 .filter-tag:hover {
   background-color: #f3f4f6;
+  border-color: #a1a1aa; /* Darker border on hover */
+  transform: translateY(-1px); /* Subtle lift effect */
 }
 
 .filter-tag.active {
   background-color: #10b981;
   color: white;
   border-color: #10b981;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3); /* Adds a glow effect when active */
+  transform: translateY(-1px);
+}
+
+/* --- Media Query for Mobile --- */
+@media (max-width: 768px) {
+  .filterbar-container {
+    gap: 8px; /* Reduce gap on smaller screens */
+    margin-bottom: 16px;
+  }
+
+  .filter-tag {
+    padding: 6px 12px; /* Slightly smaller tags on mobile */
+    font-size: 0.85rem;
+  }
 }

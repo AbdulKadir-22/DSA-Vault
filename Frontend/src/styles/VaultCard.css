@@ -1,38 +1,56 @@
+/* src/styles/VaultCard.css */
+
+.vaultcard-row {
+  transition: background-color 0.2s ease-in-out;
+}
+
+.vaultcard-row:hover {
+  background-color: #f9fafb; /* A very light grey on hover for the whole row */
+}
+
 .vaultcard-row td {
-  padding: 10px 15px;
+  padding: 16px 15px; /* Increased vertical padding for more space */
   border-bottom: 1px solid #e5e7eb;
   font-size: 0.95rem;
+  vertical-align: middle; /* Ensures content is vertically centered */
+  color: #374151;
 }
 
 .vaultcard-title {
   cursor: pointer;
   color: #2563eb;
-  font-weight: bold;
+  font-weight: 600; /* Changed from bold to 600 for a slightly cleaner look */
+  transition: color 0.2s ease;
 }
 
 .vaultcard-title:hover {
+  color: #1d4ed8; /* Darker blue on hover */
   text-decoration: underline;
 }
 
 .vaultcard-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
 }
 
 .vaultcard-tag {
-  background-color: #f3f4f6;
-  padding: 4px 8px;
+  background-color: #eef2ff; /* A light indigo that fits the theme */
+  color: #4338ca;
+  padding: 4px 10px;
   border-radius: 12px;
   font-size: 0.8rem;
+  font-weight: 500;
 }
 
 .vaultcard-difficulty {
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 0.85rem;
+  padding: 5px 12px;
+  border-radius: 14px; /* More rounded pill shape */
+  font-weight: 600;
+  font-size: 0.8rem;
   text-transform: capitalize;
+  display: inline-block; /* Ensures padding and radius apply correctly */
+  white-space: nowrap; /* Prevents text from wrapping */
 }
 
 .vaultcard-difficulty.easy {
@@ -48,4 +66,26 @@
 .vaultcard-difficulty.hard {
   background-color: #fee2e2;
   color: #991b1b;
+}
+
+/* --- Media Query for Mobile --- */
+@media (max-width: 768px) {
+  .vaultcard-row td {
+    padding: 12px 10px; /* Reduce padding */
+    font-size: 0.9rem;
+  }
+
+  .vaultcard-tags {
+    gap: 5px; /* Tighter gap for tags */
+  }
+
+  .vaultcard-tag {
+    padding: 3px 8px;
+    font-size: 0.75rem;
+  }
+
+  .vaultcard-difficulty {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
 }

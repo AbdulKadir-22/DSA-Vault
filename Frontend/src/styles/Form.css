@@ -1,38 +1,140 @@
-/* src/styles/Form.css */
-
 .form-container {
-  max-width: 600px;
-  margin: auto;
-  padding: 1.5rem;
-  background-color: #f5f5f5;
-  border-radius: 10px;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f9fafb; /* A very light grey background */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
 }
 
 .form-container h2 {
   text-align: center;
-  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  color: #111827; /* Dark grey for text */
+  margin-bottom: 2rem;
+  font-weight: 600;
 }
 
+/* --- Form Layout using CSS Grid --- */
+.problem-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 1.5rem; /* Space between grid items */
+}
+
+/* --- General Input Field Styling --- */
+.input-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+.input-field input,
+.input-field textarea,
+.input-field select {
+  width: 90%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db; /* Light grey border */
+  border-radius: 8px;
+  background-color: #ffffff;
+  font-size: 1rem;
+  color: #111827;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Style for when an input is focused */
+.input-field input:focus,
+.input-field textarea:focus,
+.input-field select:focus {
+  outline: none;
+  border-color: #2563eb; /* Blue border on focus */
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* Make textarea and some other fields span both columns */
+.full-width {
+  grid-column: 1 / -1; /* Span from the first to the last column line */
+}
+
+/* --- Specific Field Styling --- */
 textarea {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  resize: vertical;
-  font-family: monospace;
+  resize: vertical; /* Allow vertical resizing only */
+  min-height: 150px;
+  font-family: 'Courier New', Courier, monospace; /* Monospaced font for code */
+}
+
+select[multiple] {
+  padding: 0.5rem;
+}
+
+/* --- Button Styling --- */
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between; /* Pushes buttons to opposite ends */
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.submit-btn,
+.delete-btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
 }
 
 .submit-btn {
-  padding: 10px 20px;
-  margin-top: 1rem;
-  width: 100%;
-  background-color: #007bff;
-  border: none;
+  background-color: #10b981; /* Green, like the sidebar "Add" button */
   color: white;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 .submit-btn:hover {
-  background-color: #0056b3;
+  background-color: #059669;
+}
+
+.delete-btn {
+  background-color: #ef4444; /* Red for delete action */
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #dc2626;
+}
+
+.submit-btn:active,
+.delete-btn:active {
+  transform: scale(0.98);
+}
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 768px) {
+  .problem-form {
+    grid-template-columns: 1fr; /* Stack to a single column */
+  }
+
+  .form-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse; /* Stack buttons vertically */
+    gap: 1rem;
+  }
+
+  .submit-btn,
+  .delete-btn {
+    width: 100%;
+  }
 }

@@ -1,0 +1,44 @@
+/* src/styles/Home.css */
+
+/* This is the main container that holds the sidebar and the main content.
+  We use Flexbox to create the two-column layout.
+*/
+.home-container {
+  display: flex;
+  flex-direction: row; /* Arrange children (sidebar, main) side-by-side */
+  min-height: 100vh; /* Ensure the container takes at least the full height of the screen */
+  background-color: #f9fafb; /* A light grey background for the whole page */
+}
+
+/* This is the main content area that holds the search bar, filters, and table.
+  'flex: 1' is a shorthand that tells this element to grow and take up any 
+  available space left by the sidebar.
+*/
+.home-main {
+  flex: 1; /* Allows this element to grow and fill the remaining space */
+  padding: 2rem;
+  overflow-y: auto; /* Adds a scrollbar if content overflows vertically */
+}
+
+/* --- Media Queries for Responsive Design --- */
+
+/* For tablets and smaller devices */
+@media (max-width: 1024px) {
+  .home-main {
+    padding: 1.5rem; /* Reduce padding on smaller screens */
+  }
+}
+
+/* For mobile devices. This is the most important part.
+  We change the flex-direction to 'column' to stack the sidebar 
+  on top of the main content.
+*/
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column; /* Stack sidebar and main content vertically */
+  }
+
+  .home-main {
+    padding: 1rem; /* Further reduce padding for mobile */
+  }
+}

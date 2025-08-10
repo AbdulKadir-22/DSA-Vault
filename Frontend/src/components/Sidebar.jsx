@@ -29,7 +29,7 @@ const Sidebar = ({ tags, onAddTag }) => {
         ➕ Add New
       </button>
 
-      {/* This section can be updated later with real data */}
+      {/* This section can be updated later with real data
       <div className="sidebar-stats">
         <p>
           🔥 Streak: <strong>3 days</strong>
@@ -37,7 +37,7 @@ const Sidebar = ({ tags, onAddTag }) => {
         <p>
           📚 Total: <strong>45 problems</strong>
         </p>
-      </div>
+      </div> */}
 
       <div className="sidebar-tags">
         <div className="tag-header">

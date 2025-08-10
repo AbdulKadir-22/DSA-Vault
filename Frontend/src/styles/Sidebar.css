@@ -1,82 +1,143 @@
+/* src/styles/Sidebar.css */
+
 .sidebar {
-  width: 240px;
-  background-color: #1f2937;
-  padding: 1.5rem;
-  color: white;
-  height: 100%;
-  border-right: 1px solid #ddd;
+  width: 260px; /* Slightly wider for more breathing room */
+  min-height: 88vh; /* Ensures it stretches to the full viewport height */
+  background-color: #1f2937; /* A slightly darker, more modern shade of grey */
+  padding: 2rem 1.5rem;
+  color: #e5e7eb; /* Softer white for text */
   display: flex;
+  border-radius: 15px;
   flex-direction: column;
-  justify-content: flex-start;
-  border-radius: 8px;
+  border-right: 1px solid #374151; /* Darker border that fits the theme */
+  transition: width 0.3s ease; /* Smooth transition for responsiveness */
 }
 
 .sidebar-title {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  font-weight: bold;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.5px; /* Tighter letter spacing for a modern look */
 }
 
 .sidebar-button {
   background-color: #10b981;
   color: white;
-  padding: 10px;
+  padding: 12px;
   border: none;
   border-radius: 8px;
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600; /* Bolder font */
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
 }
 
 .sidebar-button:hover {
   background-color: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
 }
 
 .sidebar-stats {
-  margin-bottom: 30px;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  border-top: 1px solid #374151;
+  border-bottom: 1px solid #374151;
+}
+
+.sidebar-stats p {
+  font-size: 0.9rem;
+  color: #d1d5db;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-stats p:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar-stats strong {
+  color: #ffffff;
+  font-weight: 600;
 }
 
 .sidebar-tags {
-  flex-grow: 1;
+  flex-grow: 1; /* Allows this section to fill remaining space */
+  display: flex;
+  flex-direction: column;
 }
 
 .tag-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .sidebar-subtitle {
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #ffffff;
 }
 
 .add-tag-btn {
-  background-color: #e0e7ff;
+  background-color: #10b981;
+  color: #d1d5db;
   border: none;
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
+  padding: 4px 10px;
+  border-radius: 6px;
   font-size: 0.8rem;
+  font-weight: 500;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .add-tag-btn:hover {
-  background-color: #c7d2fe;
+  background-color: #059669;
+  color: #ffffff;
 }
 
 .tag-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  overflow-y: auto; /* Adds a scrollbar if tags overflow */
 }
 
 .tag-item {
   background-color: #374151;
-  padding: 0.4rem 0.6rem;
-  margin: 0.3rem 0;
-  border-radius: 5px;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  border-radius: 6px;
   font-size: 0.9rem;
+  color: #d1d5db;
+  transition: all 0.2s ease;
+}
+
+.tag-item:hover {
+  background-color: #4b5563;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* --- Media Queries for Mobile & Tablet --- */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* Take full width */
+    min-height: auto; /* Height will be based on content */
+    border-right: none;
+    border-bottom: 1px solid #374151;
+    border-radius: 0; /* Remove radius when full-width */
+    padding: 1.5rem;
+  }
+
+  .sidebar-title {
+    text-align: center;
+  }
+
+  .sidebar-stats {
+    text-align: center;
+  }
 }
