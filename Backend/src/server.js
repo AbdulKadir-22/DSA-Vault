@@ -16,5 +16,5 @@ const PORT = process.env.PORT || 3000;
 const appName = process.env.APP_NAME;
 
 app.listen(PORT, () => {
-  console.log(`🟢 ${appName} running on http://localhost:${PORT}`);
+  console.log(`${appName} running on http://localhost:${PORT}`);
 });

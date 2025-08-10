@@ -7,8 +7,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const vaultRoutes = require("./routes/vault.routes");
-app.use("/vault", vaultRoutes);
+const tagRoutes = require("./routes/Tag.route");
+const problemRoutes = require("./routes/Problem.route");
+
+app.use("/api/tags", tagRoutes);
+app.use("/api/problems", problemRoutes);
 
 // Error handling
 app.use(errorHandler);
