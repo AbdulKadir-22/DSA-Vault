@@ -1,28 +1,24 @@
+// src/components/Sidebar.jsx
+
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Sidebar.css";
 
-const Sidebar = ({ tags, setTags }) => {
+// The Sidebar is now a "dumb" component.
+// It receives all the data and functions it needs as props.
+const Sidebar = ({ tags, onAddTag }) => {
   const navigate = useNavigate();
 
+  // This function is now much simpler.
+  // It gets the new tag name from the user and then calls the 'onAddTag' function
+  // that was passed down from the Home component.
   const handleAddTag = () => {
-    let newTag = prompt("Enter new tag (without #):");
-    if (!newTag) return;
-    newTag = newTag.trim();
-
-    if (newTag === "") {
-      alert("Tag cannot be empty!");
-      return;
+    const newTagName = prompt("Enter new tag name:");
+    
+    // Basic validation: ensure the tag isn't empty or just spaces.
+    if (newTagName && newTagName.trim() !== "") {
+      onAddTag(newTagName.trim());
     }
-
-    const normalized = newTag.toLowerCase();
-    const tagExists = tags.some((tag) => tag.toLowerCase() === normalized);
-
-    if (tagExists) {
-      alert("Tag already exists!");
-      return;
-    }
-
-    setTags([...tags, newTag]);
   };
 
   return (
@@ -33,6 +29,7 @@ const Sidebar = ({ tags, setTags }) => {
         ➕ Add New
       </button>
 
+      {/* This section can be updated later with real data */}
       <div className="sidebar-stats">
         <p>
           🔥 Streak: <strong>3 days</strong>
@@ -51,9 +48,10 @@ const Sidebar = ({ tags, setTags }) => {
         </div>
 
         <ul className="tag-list">
-          {tags.map((tag, idx) => (
-            <li className="tag-item" key={idx}>
-              #{tag}
+          {/* It maps over the 'tags' prop to display the list. */}
+          {tags.map((tag) => (
+            <li className="tag-item" key={tag._id}>
+              #{tag.name}
             </li>
           ))}
         </ul>
